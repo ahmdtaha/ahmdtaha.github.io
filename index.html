@@ -1,1 +1,773 @@
-Hello World
+<!doctype html>
+<html>
+
+<head>
+	<title>Ahmed Taha Home Page</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function () {
+
+			$('#content').load("header.html");
+
+		});
+	</script>
+
+	<script src="http://www.w3schools.com/lib/w3data.js"></script>
+
+	<script>
+		(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date(); a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-89530027-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+
+
+
+	<script type="text/javascript">
+
+
+		$(document).ready(function () {
+			$(window).scroll(function () {
+				if ($(this).scrollTop() > 100) {
+					$('#scroll').fadeIn();
+				} else {
+					$('#scroll').fadeOut();
+				}
+			});
+			$('#scroll').click(function () {
+				$("html, body").animate({ scrollTop: 0 }, 600);
+				return false;
+			});
+		});
+
+
+		function toggle() {
+			var ls = this.parentNode.getElementsByTagName('ul')[0],
+				styles, display;
+
+			if (ls) {
+				styles = window.getComputedStyle(ls);
+				display = styles.getPropertyValue('display');
+
+				ls.style.display = (display === 'none' ? 'block' : 'none');
+			}
+		}
+
+		function afterload() {
+			var eles = document.querySelectorAll('.ele');
+
+			Array.prototype.slice.call(eles).forEach(function (e) {
+				e.addEventListener('click', toggle);
+			});
+
+		}
+		function img_clicked(ele_id) {
+			var img = document.getElementById(ele_id);
+			var modal = document.getElementById('myModal');
+			var modalImg = document.getElementById("img01");
+			var captionText = document.getElementById("caption");
+
+			modal.style.display = "block";
+			modalImg.src = img.src;
+			captionText.innerHTML = img.alt;
+
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close")[0];
+
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function () {
+				modal.style.display = "none";
+			}
+		}
+
+	</script>
+
+	<style>
+		#scroll {
+			position: fixed;
+			right: 10px;
+			bottom: 10px;
+			cursor: pointer;
+			width: 50px;
+			height: 50px;
+			background-color: #3498db;
+			text-indent: -9999px;
+			display: none;
+			-webkit-border-radius: 60px;
+			-moz-border-radius: 60px;
+			border-radius: 60px
+		}
+
+		#scroll span {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -8px;
+			margin-top: -12px;
+			height: 0;
+			width: 0;
+			border: 8px solid transparent;
+			border-bottom-color: #ffffff;
+		}
+
+		#scroll:hover {
+			background-color: #e74c3c;
+			opacity: 1;
+			filter: "alpha(opacity=100)";
+			-ms-filter: "alpha(opacity=100)";
+		}
+
+		body {
+			background: #ECE9E6;
+			/* fallback for old browsers */
+			background: -webkit-linear-gradient(to bottom, #FFFFFF, #ECE9E6);
+			/* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to bottom, #FFFFFF, #ECE9E6);
+			/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+			margin-left: 10%;
+
+			margin-right: 10%;
+		}
+
+		#pub_table {
+			border-collapse: separate;
+			border-spacing: 0 1px;
+			margin-top: -10px;
+
+		}
+
+		#pub_table tr:nth-child(odd) {
+			background-color: #ece9e6;
+		}
+
+		#pub_table tr:nth-child(even) {
+			background-color: #e0dde7;
+		}
+
+		#pub_table td {
+			border: solid 1px #FFF;
+			border-color: transparent;
+			border-style: solid none;
+			padding: 10px;
+		}
+
+		#pub_table td:first-child {
+			border-left-style: solid;
+			border-top-left-radius: 10px;
+			border-bottom-left-radius: 10px;
+		}
+
+		#pub_table td:last-child {
+			border-right-style: solid;
+			border-bottom-right-radius: 10px;
+			border-top-right-radius: 10px;
+		}
+
+		#news_table {
+			background: #E0EAFC;
+			/* fallback for old browsers */
+			background: -webkit-linear-gradient(to bottom, #CFDEF3, #E0EAFC);
+			/* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to bottom, #CFDEF3, #E0EAFC);
+			/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+			border-radius: 10px;
+			margin-left: 10%;
+			margin-right: 10%;
+			padding-top: 1px;
+			padding-bottom: 1px;
+			font-size: 18px;
+		}
+
+
+		#innerlinks {
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 20px;
+			letter-spacing: 0px;
+			word-spacing: 0px;
+			color: #000000;
+			font-weight: 400;
+			text-decoration: none;
+			font-style: normal;
+			font-variant: normal;
+			text-transform: none;
+		}
+
+		.ele:before {
+			content: "+";
+			margin-right: 4px;
+		}
+
+		ul.courses {
+			list-style: none;
+		}
+
+		ul ul {
+			display: none;
+		}
+
+		.ele {
+			cursor: pointer;
+		}
+
+		.ele:hover {
+			color: red;
+		}
+
+
+
+		/* The Modal (background) */
+		.modal {
+			display: none;
+			/* Hidden by default */
+			position: fixed;
+			/* Stay in place */
+			z-index: 1;
+			/* Sit on top */
+			padding-top: 100px;
+			/* Location of the box */
+			left: 0;
+			top: 0;
+			width: 100%;
+			/* Full width */
+			height: 100%;
+			/* Full height */
+			overflow: auto;
+			/* Enable scroll if needed */
+			background-color: rgb(0, 0, 0);
+			/* Fallback color */
+			background-color: rgba(0, 0, 0, 0.9);
+			/* Black w/ opacity */
+		}
+
+		/* Modal Content (Image) */
+		.modal-content {
+			margin: auto;
+			display: block;
+			width: 80%;
+			max-width: 700px;
+		}
+
+		/* Caption of Modal Image (Image Text) - Same Width as the Image */
+		#caption {
+			margin: auto;
+			display: block;
+			width: 80%;
+			max-width: 700px;
+			text-align: center;
+			color: #ccc;
+			padding: 10px 0;
+			height: 150px;
+		}
+
+		/* Add Animation - Zoom in the Modal */
+		.modal-content,
+		#caption {
+			animation-name: zoom;
+			animation-duration: 0.6s;
+		}
+
+		@keyframes zoom {
+			from {
+				transform: scale(0)
+			}
+
+			to {
+				transform: scale(1)
+			}
+		}
+
+		/* The Close Button */
+		.close {
+			position: absolute;
+			top: 15px;
+			right: 35px;
+			color: #f1f1f1;
+			font-size: 40px;
+			font-weight: bold;
+			transition: 0.3s;
+		}
+
+		.close:hover,
+		.close:focus {
+			color: #bbb;
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		/* 100% Image Width on Smaller Screens */
+		@media only screen and (max-width: 700px) {
+			.modal-content {
+				width: 100%;
+			}
+		}
+
+		.hover_img {
+			border-radius: 5px;
+			cursor: pointer;
+			transition: 0.3s;
+		}
+
+		.hover_img:hover {
+			opacity: 0.7;
+		}
+	</style>
+
+</head>
+
+<body onload="afterload()">
+
+	<a href="#" id="scroll" style="display: inline;"><span></span></a>
+
+	<table align="center" border="0" cellpadding="1" cellspacing="1" style="">
+		<tbody>
+			<tr>
+				<td><img alt="A photo of Ahmed Taha" src="http://cs.umd.edu/~ahmdtaha/imgs/crop_image.jpg"
+						style="width: 150px; height: 150px;border-radius: 10px;" /></td>
+				<td>
+					<p><span style="font-size:18px;"><span style="font-family:verdana,geneva,sans-serif;"><strong>Ahmed Ali Attia Ibrahim Taha</strong></span></span></p>
+
+<!--					<p><span style="font-size:18px;"><span
+								style="font-family:verdana,geneva,sans-serif;"><strong>PhD in Computer Vision/Machine Learning</strong></span></span></p> -->
+
+					<p><span style="font-size:18px;"><span
+													style="font-family:verdana,geneva,sans-serif;"><strong>Research Scientist at WhiteRabbit.AI</strong></span></span></p>
+													
+					<p><span style="font-size:18px;"><span
+								style="font-family:verdana,geneva,sans-serif;color: #1c87c9"><strong></strong></span></span></p>
+
+					<p><a href="https://github.com/ahmdtaha" target="_blank"><img alt=""
+								src="http://cs.umd.edu/~ahmdtaha/imgs/github_32.png" title='Github' /></a>
+						<a href="https://scholar.google.com/citations?user=CFIeNKEAAAAJ&hl=en" target="_blank"><img
+								alt="" src="http://cs.umd.edu/~ahmdtaha/imgs/scholar_32.png"
+								title='Google Scholar' /></a>
+						<a href="https://www.linkedin.com/in/ahmdtaha/" target="_blank"><img alt=""
+								src="http://cs.umd.edu/~ahmdtaha/imgs/linkedin_32.png" title='LinkedIn' /></a>
+						<a href="https://www.youtube.com/channel/UCBB1d3mQc6payCzh0rmW6cA" target="_blank"><img alt=""
+								src="http://cs.umd.edu/~ahmdtaha/imgs/youtube_32.png" title='Youtube' /></a>
+						<a href="https://medium.com/@ahmdtaha" target="_blank"><img alt=""
+								src="http://cs.umd.edu/~ahmdtaha/imgs/medium_32.png" title='Medium' /></a>
+						<a href="https://www.hackerrank.com/ahmed_taha" target="_blank"><img alt=""
+								src="http://cs.umd.edu/~ahmdtaha/imgs/hackerrank_icon_32.jpg" title='HackerRank' /></a>
+						<a href="http://www.cs.umd.edu/~ahmdtaha/Ahmed_Taha_Resume.pdf" target="_blank"><img alt=""
+								src="http://cs.umd.edu/~ahmdtaha/imgs/cv_32.png" title='Short Resume' /></a>
+						<a href="http://www.cs.umd.edu/~ahmdtaha/Ahmed_Taha_CV.pdf" target="_blank"><img alt=""
+								src="http://cs.umd.edu/~ahmdtaha/imgs/long_cv_32_2.png" title='The Long CV' /></a>
+					</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+	<div id='news_table' style='width:80%'>
+		<p align="center" id="innerlinks">News</p>
+		<ul>
+			<li>[01/2024] <a href='https://github.com/ahmdtaha/the_equations_behind/blob/main/dall_e/main.pdf' target="_blank">Article:</a> The Equations Behind DALL-E</li>
+			<li>[10/2023] <a href='https://www.rsipvision.com/MICCAI2023-Tuesday/13/' target="_blank">Press:</a> <i>MICCAI 2023 Magazine</i> has featured our <a href='https://arxiv.org/abs/2308.06420'>M&M Paper</a> for lesions detection in mammograms.</li>
+			<li>[08/2023] <a href='https://arxiv.org/abs/2308.06420' target="_blank">Paper:</a> One Paper accepted in
+				MICCAI 2023</li>
+			<li>[08/2023] <a href='https://www.youtube.com/watch?v=By_O0k102PY&ab_channel=AhmedTaha' target="_blank">Video:</a> How Fully Sharded Data Parallel (FSDP) works?</li>
+			<li>[05/2023] <a href='https://medium.com/p/92db6f8803f7' target="_blank">Article:</a> High Resolution Images and Efficient Transformers</li>
+			<li>[03/2023] <a href='https://medium.com/p/f00ee21e5473' target="_blank">Article:</a> Masked Autoencoders Are Scalable Vision Learners</li>
+			<li>[02/2023] <a href='https://medium.com/p/c1809de2478a' target="_blank">Article:</a> Rethinking Attention with Performers - Part II & Final</li>
+			<li>[10/2022] <a href='https://medium.com/p/ba6e986bf715' target="_blank">Article:</a> Rethinking Attention with Performers - Part I</li>
+			<li>[08/2022] <a href='https://arxiv.org/abs/2208.06066' target="_blank">Paper:</a> One Paper accepted in
+				MICCAI 2022</li> 
+			<li>[07/2022] <a href='https://github.com/whiterabbit-ai/hct' target="_blank">Github:</a> Official PyTorch
+				implementation of <b><i>Deep is a Luxury We Don't Have</i></b></li>
+			<li>[05/2022] <a href='https://medium.com/p/b2642297927e' target="_blank">Article:</a> Understanding the
+				Effective Receptive Field in Deep Convolutional Neural Networks</li>
+			<li>[04/2022] <a href='https://medium.com/p/d3c1c088ea1b' target="_blank">Article:</a> Understanding
+				Transfer Learning for Medical Imaging</li>
+			<li><a href='https://ahmdtaha.github.io/news' target="_blank">Full News list</a></li>
+		</ul>
+	</div>
+	</br>
+	<table style='width:90%' align="center" border='0'>
+		<tr>
+			<td align="center"><a href="#publications">
+					<div id="innerlinks">Publications</div>
+				</a></td>
+			<td align="center"><a href="#interns">
+					<div id="innerlinks">Interns</div>
+				</a></td>
+			<td align="center"><a href="#research">
+					<div id="innerlinks">Research</div>
+				</a></td>
+			<td align="center"><a href="#awards">
+					<div id="innerlinks">Awards</div>
+				</a></td>
+			<td align="center"><a href="#teaching">
+					<div id="innerlinks">Teaching</div>
+				</a></td>
+		</tr>
+	</table>
+	<br />
+	<table style='width:80%' align="center" border='0'>
+		<tr>
+			<td><strong><u>Research Interest</u></strong>:</td>
+			<td>Feature Embedding, Metric Learning, Deep Networks, Machine Learning, Image segmentation, Texture
+				classification, Patch matching.</td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr valign='top'>
+			<td><u><strong>Technical Skills</strong></u>:</td>
+			<td>Python, C/C++, JAVA, OpenCV, MATLAB, mex&nbsp;files, and CUDA<br>TensorFlow, PyTorch, Keras, OpenCV,
+				SimpleITK, CAFFE</td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr valign='top'>
+			<td><strong><u>Education</u></strong>:</td>
+			<td>
+				Computer Science PhD (+MS) GPA: 4.0/4.0 - University of Maryland<br>
+				Masters of Business Administration (Marketing Major) GPA 3.83/4.0 - Arab Academy for Science and
+				Technology<br>
+				Computer Science BS GPA 3.81/4.0 - Alexandria University- Faculty of Engineering</p>
+			</td>
+		</tr>
+
+
+	</table>
+
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+
+		<!-- The Close Button -->
+		<span class="close">&times;</span>
+
+		<!-- Modal Content (The Image) -->
+		<img class="modal-content" id="img01">
+
+		<!-- Modal Caption (Image Text) -->
+		<div id="caption"></div>
+	</div>
+
+	<table style='width:90%' align="center" border='0'>
+		<th align='left'>
+			<p><u>
+					<h2 style='display: inline'><a name='publications'>Publications:</a></h2>
+				</u> (click on image to expand)</p>
+		</th>
+	</table>
+
+	<table cellpadding="1" cellspacing="1" style='width:90%' align="center" border='0' id="pub_table">
+		<col width="20%">
+		<col width="80%">
+		<tbody>
+
+			<!-- M&M  -->
+			<tr>
+				<td rowspan="1"><img id='miccai_2023_nhi' class='hover_img' width="200" height="100"
+						style='text-align: justify;'
+						alt="We propose M&M, a Multi-view and Multi-instance learning system to localize malignant findings in mammograms. M&M focuses on clinical applicability and demonstrates its superiority by (1) surpassing previous works by a large margin in the clinically relevant region of less than 1 false-positive/image (left figure) (2) being resilient in clinical practice which includes abundant negative images (right figure)."
+						src="./publications/2023_slim_intro_figure.jpg" onclick='img_clicked(this.id)'></td>
+				<td><strong><a href='https://arxiv.org/abs/2308.06420' target="_blank">M&M: Tackling False Positives in Mammography with a Multi-view and Multi-instance Learning Sparse Detector</a></strong>,&nbsp;MICCAI 2023 (acceptance rate 32%)</br>Yen Nhi Truong Vu*, Dan Guo*, <b>Ahmed Taha</b>, Jason Su, Thomas Paul Matthews
+					<br /> <a href='https://ahmdtaha.github.io/paper/miccai_nhi_mm' target='_blank'>Project Page</a>&nbsp;&nbsp;&nbsp;<a href='https://www.rsipvision.com/MICCAI2023-Tuesday/13/' target="_blank">MICCAI Featured</a>
+				</td>
+			</tr>
+			
+			
+			<!-- HCT  -->
+			<tr>
+				<td rowspan="1"><img id='miccai_2022_ahmd' class='hover_img' width="200" height="100"
+						style='text-align: justify;'
+						alt="Neural networks' building blocks. (Left) A standard convolutional block for vision models with spatial downsampling capability. (Center) A standard attention block for language models with long range attention capability. (Right) Our Attention-Convolutional (AC) block with both spatial downsampling and long range attention capabilities. In the AC block, the conv layer both reduces the spatial resolution  and increases the number of channels. Batchnorm and activation (e.g., RELU) layers are omitted for visualization purposes."
+						src="./publications/2022_ac_block.jpg" onclick='img_clicked(this.id)'></td>
+				<td><strong><a href='https://arxiv.org/abs/2208.06066' target="_blank">Deep is a Luxury We Don't
+							Have</a></strong>,&nbsp;MICCAI 2022 (acceptance rate 31%)</br><b>Ahmed Taha*</b>, Yen Nhi
+					Truong Vu*, Brent Mombourquette, Thomas Matthews, Jason Su, Sadanand Singh
+					<br /> <a href='https://ahmdtaha.github.io/paper/miccai_ahmed_deep' target='_blank'>Project Page</a>
+				</td>
+			</tr>
+
+
+			<!-- SVMax  -->
+			<tr>
+				<td rowspan="1"><img id='arxiv_2021_ahmd' class='hover_img' width="200" height="100"
+						style='object-fit: contain;'
+						alt=" We propose singular value maximization (SVMax) to learn a more uniform feature embedding.  The SVMax regularizer supports both supervised and unsupervised learning. Our formulation mitigates model collapse and enables larger learning rates."
+						src="./publications/svmax.jpg" onclick='img_clicked(this.id)'></td>
+				<td><strong><a href='https://arxiv.org/abs/2103.02770' target="_blank">SVMax: A Feature Embedding
+							Regularizer</a></strong>,&nbsp;arXiv 2021</br><b>Ahmed Taha</b>, Alex Hanson, Abhinav
+					Shrivastava, Larry Davis
+					<br /> <a href='https://ahmdtaha.github.io/paper/arxiv_ahmed_svmax' target='_blank'>Project Page</a>
+				</td>
+			</tr>
+
+			<!-- KE  -->
+			<tr>
+				<td rowspan="1"><img id='cvpr_2021_ahmd' class='hover_img' width="200" height="100"
+						style='object-fit: contain;'
+						alt=" we  propose  an evolution-inspired training approach to boost performance on relatively small datasets. The knowledge evolution approach splits a deep network into two hypotheses: the fit-hypothesis and the reset-hypothesis. We iteratively evolve the knowledge inside the fit-hypothesis by perturbing the reset-hypothesis for multiple generations."
+						src="./publications/ke_introduction.jpg" onclick='img_clicked(this.id)'></td>
+				<td><strong><a href='https://arxiv.org/abs/2103.05152' target="_blank">Knowledge Evolution in Neural
+							Networks</a></strong>,&nbsp;CVPR Oral 2021 (acceptance rate 24% -- Oral 4%)</br><b>Ahmed
+						Taha</b>, Abhinav Shrivastava, Larry Davis
+					<br /> <a href='https://ahmdtaha.github.io/paper/cvpr_ahmed_knowledge' target='_blank'>Project
+						Page</a>
+				</td>
+			</tr>
+
+
+			<!-- L2-CAF  -->
+			<tr>
+				<td rowspan="1"><img id='eccv_2020_ahmd' class='hover_img' width="200" height="100"
+						style='object-fit: contain;'
+						alt=" We formulate attention visualization as a constrained optimization problem. We leverage the unit L2-Norm constraint as an attention filter (L2-CAF) to localize attention in both classification and retrieval networks."
+						src="./publications/l2_norm_arch_cat.jpg" onclick='img_clicked(this.id)'></td>
+				<td><strong><a href='https://arxiv.org/abs/2007.09748' target="_blank">A Generic Visualization Approach
+							for Convolutional Neural Networks</a></strong>,&nbsp;ECCV 2020 (acceptance rate
+					27%)</br><b>Ahmed Taha</b>, Xitong Yang, Abhinav Shrivastava, Larry Davis
+					<br /> <a href='https://ahmdtaha.github.io/paper/eccv_ahmed_generic' target='_blank'>Project
+						Page</a>
+				</td>
+			</tr>
+
+			<!-- Two Head Arch  -->
+			<tr>
+				<td rowspan="1"><img id='wacv_2020_ahmd' class='hover_img' width="200" height="100"
+						style='object-fit: contain;'
+						alt="We extend standard architectures with an embedding head. We leverage a ranking regularizer to the embedding head to improve (1) classification accuracy and (2) feature embedding."
+						src="./publications/2020_two_head.jpg" onclick='img_clicked(this.id)'></td>
+				<td><strong><a href='https://arxiv.org/abs/1901.08616' target="_blank">Boosting Standard Classification
+							Architectures Through a Ranking Regularizer</a></strong>,&nbsp;WACV 2020 (acceptance rate
+					34.5%)</br><b>Ahmed Taha</b>, Yi-Ting Chen, Teruhisa Misu, Abhinav Shrivastava, Larry Davis
+					<br /> <a href='https://ahmdtaha.github.io/paper/wacv_ahmed_boosting' target='_blank'>Project
+						Page</a>
+				</td>
+			</tr>
+
+			<!-- Heteroscedastic Uncertainty Paper  -->
+			<tr>
+				<td rowspan="1"><img id='arxiv_2019_ahmd_a' class='hover_img' width="200" height="100"
+						style='object-fit: contain;'
+						alt="We introduce an unsupervised formulation to estimate heteroscedastic uncertainty in retrieval systems. We propose an extension to triplet loss that models data uncertainty for each input."
+						src="./publications/2019_hetero_btl.jpg" onclick='img_clicked(this.id)'></td>
+				<td><strong><a href='https://arxiv.org/pdf/1902.02586.pdf' target="_blank">Unsupervised Data Uncertainty
+							Learning in Visual Retrieval Systems</a></strong>,&nbsp;arXiv 2019</br><b>Ahmed Taha</b>,
+					Yi-Ting Chen, Teruhisa Misu, Abhinav Shrivastava, Larry Davis
+					<br /> <a href='https://arxiv.org/pdf/1902.02586.pdf' target='_blank'>arXiv Link</a>
+				</td>
+			</tr>
+
+			<!-- Epistemic Uncertainty Paper  -->
+			<tr>
+				<td rowspan="1"><img id='arxiv_2019_ahmd_b' class='hover_img' width="200" height="100"
+						style='object-fit: contain;' style='object-fit: contain;'
+						alt="We cast visual retrieval as a regression problem by posing triplet loss as a regression loss. This enables epistemic uncertainty estimation using dropout as a Bayesian approximation framework in retrieval. Accordingly, Monte Carlo sampling is leveraged to boost retrieval performance"
+						src="./publications/2019_epis_btl.jpg" onclick='img_clicked(this.id)'></td>
+				<td><strong><a href='https://arxiv.org/pdf/1901.07702.pdf' target="_blank">Exploring Uncertainty in
+							Conditional Multi-Modal Retrieval Systems</a></strong>,&nbsp;arXiv 2019</br><b>Ahmed
+						Taha</b>, Yi-Ting Chen, Teruhisa Misu, Larry Davis
+					<br /> <a href='https://arxiv.org/pdf/1901.07702.pdf' target='_blank'>arXiv Link</a>
+				</td>
+			</tr>
+
+
+
+			<tr>
+				<td rowspan="1">
+					<img id='miccai_2018_junning' class='hover_img' width="200" height="100"
+						style='object-fit: contain;'
+						alt="(a) An example of sequential residual network. (b) An example of directed acyclic graph. (c) The residual graph derived from (b). (d) The U-Net architecture. Downward arrows represent down-sampling or strided convolutions. Upward arrows represent up-sampling or deconvolution. (e) The Res. U-Net architecture. It consists of two threads. The first thread is scale-specific features: the green channels. It follows a similar architecture to the U-Net. The second thread is the residual architecture, including the red, the orange and the blue channels."
+						src="./publications/miccai_2018_junning.jpg" onclick='img_clicked(this.id)' />
+				</td>
+				<td><strong><a href='https://link.springer.com/chapter/10.1007/978-3-030-00937-3_52'
+							target="_blank">Segmentation of Renal Structures for Image-Guided
+							Surgery</strong></a>,&nbsp;MICCAI 2018 (acceptance rate 34.9%)</br> Junning Li, Pechin Lo,
+					<b>Ahmed Taha</b>, Hang Wu, Tao Zhao
+				</td>
+			</tr>
+
+			<tr>
+				<td rowspan="1"><img id='miccai_2018_ahmd' class='hover_img' width="200" height="100"
+						style='object-fit: contain;'
+						alt="KID-Net architecture. The two contradicting phases are colored in blue. The down-sampling and up-sampling phases detect and localize features respectively. The segmentation result, at different scale levels, are averaged to compute the final segmentation."
+						src="./publications/iris_net.png" onclick='img_clicked(this.id)'></td>
+				<td><strong><a href='https://arxiv.org/abs/1806.06769' target="_blank">Kid-Net: Convolution Networks for
+							Kidney Vessels Segmentation from CT-Volumes</a></strong>,&nbsp;MICCAI 2018 (acceptance rate
+					34.9%)</br><b>Ahmed Taha</b>, Pechin Lo, Junning Li, Tao Zhao</td>
+			</tr>
+
+			<tr>
+				<td rowspan="1" align=center><img id='cvprw2018' class='hover_img' width="200" height="100"
+						style='object-fit: contain;'
+						alt="Self-supervised learning framework formulated as a four-class classification problem. Given a tuple of a RGB frame and a stack of difference (SOD), the network reasons about frame ordering and spatio-temporal correspondence. Valid and invalid ordered motion are highlighted in green and red respectively. Class III shows a tuple of a weight lift- ing RGB frame and a SOD encoding a boxing action with a valid sequence – no spatio-temporal correspondence."
+						src="./publications/ts3_cvprw2018.jpg" onclick='img_clicked(this.id)'></td>
+				<td><strong><a href="https://arxiv.org/abs/1806.07383" target="_blank">Two Stream Self-Supervised
+							Learning for Action Recognition</a> </strong> CVPRW 2018 </br> <b>Ahmed Taha</b>, Moustafa
+					Meshry, Xitong Yang, Yi-Ting Chen, Larry Davis<br />(<a href="https://deepvision.data61.csiro.au/"
+						target="_blank">DeepVision</a>)- Extended Abstract <a href="https://github.com/ahmdtaha/828j"
+						target="_blank">Github Code</a></td>
+			</tr>
+
+
+			<tr>
+				<td rowspan="1" align=center><img id='arxiv_2017' class='hover_img' onclick='img_clicked(this.id)'
+						width="100" height="100" style='object-fit: contain;'
+						src="https://github.com/MoustafaMeshry/draw/raw/master/figures/output.gif"></td>
+				<td><a href="https://arxiv.org/abs/1712.08838" target="_blank"><strong>Texture Synthesis with Recurrent
+							Variational Auto-Encoder</strong></a>,&nbsp;ARXIV 2017</br>Rohan Chandra, Sachin Grover,
+					Kyungjun Lee, Moustafa Meshry, <b>Ahmed Taha</b></br><a
+						href="https://github.com/MoustafaMeshry/draw" target="_blank">Github Code</a></td>
+			</tr>
+
+			<tr>
+				<td rowspan="1"><img id='icip_2015' class='hover_img' width="200" height="100"
+						style='object-fit: contain;'
+						alt="Seeded Laplacian approach overview on Toy Image of size 48 × 48. (b)Toy image is perturbed with Gaussian noise and overlaid by seeded annotations (blue for background and yellow for fore- ground). (c)Setting a Zero threshold on the eigenfunction vector pro- duces (d) the final segmentation result."
+						src="./publications/2015_icip.jpg" onclick='img_clicked(this.id)'></td>
+				<td><a href="https://ieeexplore.ieee.org/document/7350749/" target="_blank"><strong>Seeded Laplacian: An
+							Interactive Image Segmentation Approach using Eigenfunctions</strong></a>,&nbsp;ICIP
+					2015</br><b>Ahmed Taha</b>, Marwan Torki</br><a href="https://github.com/ahmdtaha/SL_jrl"
+						target="_blank">Github Code</a></td>
+			</tr>
+
+			<tr>
+				<td rowspan="1"><img id='bmvc_2015' class='hover_img' width="200" height="100"
+						style='object-fit: contain;'
+						alt="The effect of discriminative embedding. Left: Image with provided user scribbles. Red for FG and blue for BG. Middle: 3D plot of the RGB channels for the provided scribbles. The scribbles are mixed in the RGB color space. Right: 3D plot of the first 3 dimensions of the our discriminative embedding. The color modalities present in the scribbles are preserved. Remark that the FG has two modalities namely skin color and jeans. Also, the BG has two modalities the sky and horse body."
+						src="./publications/2015_bmvc.jpg" onclick='img_clicked(this.id)'></td>
+				<td><a href="http://www.bmva.org/bmvc/2015/papers/paper072/paper072.pdf"
+						target="_blank"><strong>Multi-Modality Feature Transform: An Interactive Image Segmentation
+							Approach</strong></a>, BMVC 2015</br>Moustafa Meshry, <b>Ahmed Taha</b>, Marwan Torki</br><a
+						href="http://www.eng.alexu.edu.eg/~mtorki/Research/Codes/MMFT%20-%20BMVC%202015.zip"
+						target="_blank">Code</a></td>
+			</tr>
+
+		</tbody>
+	</table>
+	</br>
+
+	<p><u>
+			<h2><a name="interns">Internship:</a></h2>
+		</u></p>
+	<ul>
+		<li>Summer 2019: Student Associate at Honda Research Institute (HRI-US)</li>
+		<li>Summer 2018: Research Assistant in University Of Maryland, sponsored by Honda Research Institute</li>
+		<li>Summer 2017: Medical Image Analysis/Machine Learning Intern at Intuitive Surgical Inc</li>
+		<li>Summer 2016: Emerging Graphics Group Intern at Adobe Systems Inc</li>
+	</ul>
+
+	<p><u>
+			<h2><a name="research">Research Experience:</a></h2>
+		</u></p>
+
+	<ul>
+		<li>
+			<b>[Summer 2018] Video Retrieval System [Honda Research Institute (HRI-US) internship] [<a
+					href="https://www.youtube.com/watch?v=g2jB9WnbFmA" target="_blank">Sample Video</a>]:</b> Propose a
+			descriptive markup language to describe participants' (e.g., cars and pedestrian) movements at road
+			intersections. Using the proposed language, a deterministic polynomial-time algorithm is utilized to
+			quantitatively compute an interpretable similarity metric between different driving intersection scenarios.
+			This enables us to develop a video retrieval system for both stop-sign and traffic-light controlled
+			intersections. We investigate multiple approaches to automatically transform trimmed autonomous navigation
+			ego-videos at intersections into the proposed markup language.
+		</li>
+		<li><b>[Spring 2018-Summer2019] Autonomous Navigation Recognition & Retrieval:</b> Sponsored by Honda Research
+			Institute, I explore self-supervised approaches for ego-motion action recognition. I studied also video
+			embedding, triplet loss retrieval and uncertainty estimation. This work led to a <a
+				href='http://cs.umd.edu/~ahmdtaha/posters/CVPRW2018_poster.pdf' target="_blank">CVPRW2018
+				publication</a> and pending anonymous submission.</li>
+		<li><b>[Summer 2017] Semantic Segmentation [<a href="http://cs.umd.edu/~ahmdtaha/posters/IS2017_poster.pdf"
+					target="_blank">MICCAI Poster</a>]</b>: During Intuitive Surgical internship, I applied machine
+			learning techniques to segment key anatomical structures from volumetric CT-images, in a fully automatic and
+			semi-automatic fashion. We propose a convolution neural network developed using Keras, Tensorflow and Python
+			libraries. Based on that work, two MICCAI 2018 papers are published.</li>
+		<li><b>[Summer 2016] Patch Matching [<a href="http://cs.umd.edu/~ahmdtaha/posters/InternExpo2016_AhmedTaha.pdf"
+					target="_blank">Adobe Research Intern Expo Poster</a>][<a href="https://youtu.be/wmFWvSu1DDQ"
+					target="_blank">Sample Video</a>, <a href="https://youtu.be/9anEkWSkCyc" target="_blank">Video
+					2</a>]</b>: During Adobe summer internship, I worked on a new selection/segmentation tool based on
+			patch matching. The intuition is much similar to &quot;Pseudo-polar based estimation of large translations
+			rotations and scalings in images&quot; but instead of comparing images, we compare&nbsp;patches. The
+			selection results are remarkable, yet it suffered large computational time. Thus, it is not ready for
+			industry use yet. While at Adobe, I intensively learned about&nbsp;<a
+				href="http://www.eng.tau.ac.il/~avidan/papers/ICCV2011_CSH_korman_avidan.pdf"><strong>Coherency
+					Sensitive Hashing</strong></a>,&nbsp;<a
+				href="http://gfx.cs.princeton.edu/pubs/Barnes_2010_TGP/generalized_pm.pdf" target="_blank"><strong>The
+					Generalized PatchMatch Correspondence Algorithm</strong></a> and of course Fourier transform. After
+			the internship, I did additional evaluation against <strong><a
+					href="http://users.cecs.anu.edu.au/~sgould/papers/eccv12-patchGraph.pdf"
+					target="_blank">PatchMatchGraph: Building a Graph of Dense Patch Correspondences for Label
+					Transfer</a></strong>. That&#39;s&nbsp;why I became expert with <a href="http://drwn.anu.edu.au/"
+				target="_blank">Darwin Framework</a>.</li>
+		<br />
+		<li><b>[Winter 2016]</b> Texture Classification: I worked on a new texture classification
+			approach&nbsp;classifying textures suffering a dark shadow. The results achieved was not good enough for a
+			top conference. Yet, I reviewed the literature in great details. I implemented both local binary pattern
+			(LBP) and various filter banks like&nbsp;Leung-Malik, Schmid, and maximum response. I got
+			familiar&nbsp;with&nbsp;compressed sensing&nbsp;for texture classification. I ran my evaluation experiments
+			using the following texture datasets:&nbsp;&nbsp;CUReT, UIUC and DTD.</li>
+		<br />
+		<li><b>[2015]</b> Image Segmentation: Developed an approached for solving interactive image segmentation
+			problem. The approach supports different user annotation forms like scribble, complete and incomplete
+			trimaps, tight contour and bounding box. Qualitative and quantitative results are compared against Grabcut,
+			Geodesic Star Convexity and MILCut.</li>
+	</ul>
+
+	<p><u>
+			<h2><a name="awards">Selected Awards:</a></h2>
+		</u></p>
+	<ul>
+		<li>WACV Doctoral Consortium Plus Travel Award 2020.</li>
+		<li>Graduate School's Outstanding Teaching Assistant Award for AY 2019-20 (Awarded to 2%).</li>
+		<li>Gifted unrestricted 2500$ from Adobe Systems, Inc.</li>
+		<li>University of Maryland Graduate School Deans Fellowship, 2015 and 2016</li>
+		<li>Team has been chosen as one of the Young Innovators Awards(YIA) Program winners for the academic year
+			2008/2009.</li>
+		<li>Awarded four successive times in college for the Excellent grade</li>
+	</ul>
+
+
+	<p><u>
+			<h2><a name="teaching">Teaching Experience:</a></h2>
+		</u> <i>(click to see course description)</i></p>
+	<ul class="courses">
+		<li><span class="ele">CMSC216 (Introduction to Computer Systems - Using C)</span>
+			<ul>Machine representation of data including integers and floating point. Modern computer architectural
+				features and their interaction with software (registers, caches). Interaction between user programs and
+				the OS: system class, process, and thread management. Optimizing software to improve runtime performance
+				using both compilers and hand turning.</ul>
+		</li>
+		</br>
+		<li><span class="ele">CMSC132 (Object-Oriented Programming II - Using JAVA)</span>
+			<ul>Introduction to use of computers to solve problems using software engineering principles. Design, build,
+				test, and debug medium -size software systems and learn to use relevant tools. Use object-oriented
+				methods to create effective and efficient problem solutions. Use and implement application programming
+				interfaces (APIs).
+			</ul>
+		</li>
+		</br>
+		<li><span class="ele">CMSC420 (Data Structures - Using JAVA)</span>
+			<ul>Description, properties, and storage allocation of data structures including lists and trees. Algorithms
+				for manipulating structures. Applications from areas such as data processing, information retrieval,
+				symbol manipulation, and operating systems.
+			</ul>
+		</li>
+		</br>
+		<li><span class="ele">CMSC426 (Computer Vision - Using PYTHON)</span>
+			<ul>An introduction to basic concepts and techniques in computer vision. This includes low-level operations
+				such as image filtering and edge detection, 3D reconstruction of scenes using stereo and structure from
+				motion, and object detection, recognition and classification.
+			</ul>
+		</li>
+
+
+	</ul>
+
+	<p><b>Postscript</b></br>After earning my Bsc, I spent some time developing mobile apps for iOS. I co-founded <a
+			href="http://www.inovaeg.com/" target="_blank">Inova, a software development company</a>. </p>
+	<!--If you want to know more about such period. plz visit my <a href="http://ahmed-taha.com/" target="_blank">personal site</a>. -->
+</body>
+
+</html>
